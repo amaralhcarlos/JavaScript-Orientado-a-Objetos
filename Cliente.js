@@ -1,23 +1,19 @@
 export class Cliente {
-    static totalDeClientes
+    static totalDeClientes = 0;
 
-    #nome;
+    nome;
     #cpf;
 
     constructor(nome, cpf) {
-        this.#nome = nome;
+        this.nome = nome;
         this.#cpf = cpf;
+
+        Cliente.totalDeClientes++;
     }
 
-    getNome() {
-        return this.#nome;
-    }
+    get nome() { return this.nome; }
+    set nome(nome) { this.nome = nome }
 
-    setNome(nome) {
-        this.#nome = nome;
-    }
+    get cpf() { return this.#cpf }
 
-    getCpf() {
-        return this.#cpf;
-    }
 }
